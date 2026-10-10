@@ -4,7 +4,9 @@ import os
 import psycopg
 from dotenv import load_dotenv
 
-load_dotenv()
+from pathlib import Path
+
+load_dotenv(Path(__file__).resolve().parents[3] / ".env")
 
 try:
     with psycopg.connect(
